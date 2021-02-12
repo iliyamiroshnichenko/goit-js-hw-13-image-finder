@@ -15,3 +15,53 @@ body {
 
   /* background-image: url('./images/bg-pattern.png'); */
 }
+.search-form {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin-bottom: 24px;
+}
+.button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .button.is-hidden {
+//   display: none;
+// }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  grid-gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-width: calc(100vw - 80px);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.articles li {
+  height: 450px;
+  overflow: hidden;
+}
+
+.articles img {
+  display: block;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+}
+
+.stats-item {
+  margin-bottom: 0;
+}
+
+.stats-item:not(:last-child) {
+  margin-right: 15px;
+}
