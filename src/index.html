@@ -28,16 +28,22 @@
           placeholder="Search images..."
         />
       </div>
-      <button type="submit" class="btn btn-primary mb-2">Искать</button>
+      <button type="submit" class="btn btn-primary mb-2">Find</button>
     </form>
 
     <ul class="gallery"></ul>
+
     <button
       type="button"
       class="btn btn-primary button"
       data-action="load-more"
     >
-      Загрузить еще
+      <span
+        class="spinner-border spinner-border-sm spinner is-hidden"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      <span class="label">Show more</span>
     </button>
   </body>
 </html>
