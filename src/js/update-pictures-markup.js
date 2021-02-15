@@ -1,8 +1,9 @@
 import picturesTpl from '../templates/pictures.hbs';
 import refs from './refs';
 
-function updatePicturesMarkup(params) {
-  const markup = picturesTpl(params);
+function updatePicturesMarkup(pictures) {
+  if (!pictures) return;
+  const markup = picturesTpl(pictures);
   refs.picturesContainer.insertAdjacentHTML('beforeend', markup);
 }
 
