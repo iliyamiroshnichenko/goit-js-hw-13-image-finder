@@ -1,5 +1,5 @@
 import picturesTpl from '../templates/pictures.hbs';
-import refs from '../js/refs';
+import refs from './refs';
 
 function updatePicturesMarkup(params) {
   const markup = picturesTpl(params);
