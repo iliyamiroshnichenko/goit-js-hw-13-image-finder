@@ -1,5 +1,3 @@
-import notification from './notifications';
-
 const apiKey = '20192065-3084c849aae1164575ffb5a21';
 
 export default {
@@ -13,10 +11,12 @@ export default {
         throw new Error('Something went wrong!(');
       })
       .then(({ hits }) => {
+        if (hits.length === 0) {
+          throw new Error('Nothing found!(');
+        }
         this.incrementPage();
         return hits;
-      })
-      .catch(err => notification.badRequest(err));
+      });
   },
   resetPage() {
     this.page = 1;
