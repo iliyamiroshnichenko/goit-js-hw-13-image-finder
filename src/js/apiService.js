@@ -1,22 +1,26 @@
+import axios from 'axios';
+
 const apiKey = '20192065-3084c849aae1164575ffb5a21';
 
 export default {
   searchQuery: '',
   page: 1,
-  fetchPictures() {
+  async fetchPictures() {
     const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${apiKey}`;
-    return fetch(url)
-      .then(res => {
-        if (res.ok) return res.json();
+    try {
+      const { status, data } = await axios.get(url);
+      if (status !== 200) {
         throw new Error('Something went wrong!(');
-      })
-      .then(({ hits }) => {
-        if (hits.length === 0) {
-          throw new Error('Nothing found!(');
-        }
-        this.incrementPage();
-        return hits;
-      });
+      }
+      const { hits } = data;
+      if (hits.length === 0) {
+        throw new Error('Nothing found!(');
+      }
+      this.incrementPage();
+      return hits;
+    } catch (err) {
+      throw err;
+    }
   },
   resetPage() {
     this.page = 1;
