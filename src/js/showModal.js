@@ -7,7 +7,7 @@ function showModal(event) {
     return;
   }
   const largeImgUrl = img.dataset.source;
-  const instance = basicLightbox.create(` <img src="${largeImgUrl}">`);
+  const instance = basicLightbox.create(`<img src="${largeImgUrl}">`);
   instance.show();
 }
 
